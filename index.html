@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="магазин Ёлка карточка товара">
+  <!-- <link rel="icon" href="./images/elephant.svg" type="image/x-icon"> -->
+  <title>Ёлка Карточка</title>
+  <script defer="defer" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <!-- <script defer="defer" src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+        <script defer="defer" src="./vendor/inputmask.min.js"></script> -->
+  <!--Скроллбар для modal--order-->
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css">    
+  <!--Скроллбар для modal--order-->
+  <script defer="defer" src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>  
+  <script defer="defer" src="./js/card.js"></script>
+  <link rel="stylesheet" href="./vendor/normalize.css">
+  <link rel="stylesheet" href="./css/card.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__container"></div>
+  </header>
+  <main>
+    <section class="cost">
+      <div class="container">
+        <div class="cost__item">
+          <h3>Ёлка №1</h3>
+          <div class="term-card__text">
+            <p>Срок реализации - <strong>1 месяц</strong></p>
+            <p>Ваша закупка - <strong>1 месяц</strong></p>
+            <p>Ваша закупка - <strong>1 месяц</strong></p>
+          </div>
+          <button class="order modal-btn btn--reset buttonZ" data-modal="order">Заказать</button>
+        </div>
+      </div>
+    </section>
+    <section class="costa">
+      <div class="container">
+        <div class="cost__item">
+          <h3 class="fire">Ёлка №2</h3>
+          <div class="term-card__text">
+            <p>Срок реализации - <strong>2 месяц</strong></p>
+            <p>Ваша закупка - <strong>2 месяц</strong></p>
+            <p>Ваша закупка - <strong>2 месяц</strong></p>
+          </div>
+          <button class="order modal-btn btn--reset buttonZ" data-modal="order">Заказать</button>
+        </div>
+      </div>
+    </section>
+    <section class="costas">
+      <div class="container">
+        <div class="cost__item">
+          <h3>Ёлка №3</h3>
+          <div class="term-card__text">
+            <p>Срок реализации - <strong>3 месяц</strong></p>
+            <p>Ваша закупка - <strong>3 месяц</strong></p>
+            <p>Ваша закупка - <strong>3 месяц</strong></p>
+          </div>
+          <button class="order modal-btn btn--reset buttonZ" data-modal="order">Заказать</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer__container"></div>
+  </footer>
+
+  <div class="modals">
+    <div class="modal__overlay"></div>
+    <div class="modal modal--callback" data-modal-open="callback">
+      <button class="close__mobile btn--reset for-mobile" aria-label="Закрыть окно" data-swipe-treshold="20"
+        data-swipe-timeout="500" data-swipe-ignore="false"></button>
+      <button class="modal__close btn--reset">x</button>
+      <div class="modal__manager">
+        <div class="modal__img">
+          <!-- <img src="/img/manager.png" aria-hidden="true" alt="Менеджер"> -->
+        </div>
+        <div class="modal__txt">
+          <div class="modal__name">Чебурашка</div>
+          <div class="modal__post">Администратор</div>
+        </div>
+      </div>
+      <div class="modal__thanks">Спасибо что оставили заявку! №1</div>
+      <div class="modal__per">Я перезвоню вам в ближайшее время</div>
+    </div>
+    <div class="modal modal--thnx" data-modal-open="thnx">
+      <button class="close__mobile btn--reset for-mobile" aria-label="Закрыть окно" data-swipe-treshold="20"
+        data-swipe-timeout="500" data-swipe-ignore="false"></button>
+      <button class="modal__close btn--reset">x</button>
+      <h2 class="modal__heading">Спасибо что оставили заявку! №2</h2>
+      <p class="modal__descr">Товар будет отправлен на указанную вами почту</p>
+      <!-- <img src="/img/modal-thnx.png" aria-hidden="true" alt="" class="modal-thnx-img"> -->
+    </div>
+    <!-- Модалка после отправки на емайл админу -->
+    <div class="modal modal--mailing" data-modal-open="mailing-window">
+      <button class="close__mobile btn--reset for-mobile" aria-label="Закрыть окно" data-swipe-treshold="20"
+        data-swipe-timeout="500" data-swipe-ignore="false"></button>
+      <button class="modal__close btn--reset">x</button>
+      <!-- <img src="../img/mailing-2.png" alt="" aria-hidden="true"> -->
+      <h2 class="modal__heading">
+        Осталось только <br> проверить свою почту №3
+      </h2>
+      <p class="modal__descr">
+        На указанный вами e-mail было отправлено письмо
+        со ссылкой на подтверждение адреса электронной почты,
+        перейдите по ссылке из письма.
+      </p>
+    </div>
+    <div class="modal modal--order" data-modal-open="order"  data-simplebar>
+      <button class="close__mobile btn--reset for-mobile" aria-label="Закрыть окно" data-swipe-treshold="20"
+        data-swipe-timeout="500" data-swipe-ignore="false"></button>
+      <button class="modal__close btn--reset">x</button>
+      <h2 class="modal__h2 for-mobile">Бронирование участия №Мобиле</h2>
+      <div class="tariff for-mobile"></div>
+      <form class="modal__form" enctype="multipart/form-data" action="mail.php" method="POST">
+        <input type="hidden" name="admin_email[]" value="maxgraph23@gmail.com">
+        <input type="hidden" name="admin_email[]" value="ilyushara@kenguru.ru">
+        <input type="hidden" name="form_subject" value="Заявка с сайта Сайт">
+        <input type="hidden" name="Название формы" value="Забронировали билет">
+        <input type="hidden" name="Билет" value="">
+        <label class="form__label">
+          <span class="form__label-descr">Фамилия и Имя</span>
+          <span class="form__input">
+            <input type="text" data-validate-field="fio" name="ФИО" placeholder="Иванов Иван">
+          </span>
+        </label>
+        <label class="form__label">
+          <span class="form__label-descr">Номер телефона</span>
+          <span class="form__input">
+            <input type="tel" data-validate-field="tel" name="Телефон" placeholder="+7 (___) ___-__-__">
+          </span>
+        </label>
+        <label class="form__label">
+          <span class="form__label-descr">Ваш e-mail</span>
+          <span class="form__input">
+            <input type="email" data-validate-field="email" name="email" placeholder="ivanov@mail.ru">
+          </span>
+        </label>
+        <label class="form__label form__label_file">
+          <span class="form__label-span" aria-hidden="true">Не обязательно</span>
+          <span class="form__label-descr">Добавьте файл</span>
+          <input type="file" multiple name="file[]" class="file">
+        </label>
+        <div class="modal__form-btn">
+          <button class="modal__button buttonZ btn--reset" type="submit">Заказать</button>
+          <div class="form__policy">
+            Нажимая на кнопку, вы соглашаетесь с нашей
+            <a href="https://rocket-telecom.ru/wp-content/uploads/2023/06/politika-v-otnoshenii-obrabotki-personalnyh-dannyh-rtcz.pdf?ysclid=lnygqc4a8t42508700" target="_blank">политикой обработки персональных данных</a><!-- href="land.pdf" -->
+          </div>
+        </div>
+      </form>
+      <div class="modal__ord">
+
+      </div>
+      <div class="modal__bottom">
+        <div class="modal__manager">
+          <!-- <img src="/img/manager.png" aria-hidden="true" alt="Менеджер"> -->
+        </div>
+        <div class="modal__text">
+          Остались вопросы? Свяжитесь со мной любым удобным способом:
+          <a href="tel:80033088499">8 (0033) 08-84-99</a> или <a href="mailto:info@.mail">info@.mail</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
